@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div align="center">
+<h1>Run one of the following tools:</h1>
+    {%  for name in tool_name %}
+
+    <a href="{%  url 'run_tool_detail' name.id %}">{{ name.name }}</a>
+<br>
+    <br>
+{% endfor %}
+<br>
+    <a href="{%  url 'index'  %}">Back to home screen</a>
+
+    </div>
+
+</body>
+</html>

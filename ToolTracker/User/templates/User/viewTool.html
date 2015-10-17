@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div align="center">
+<h1>All Tools are:</h1>
+    {%  for name in tool_name %}
+   <p> <a href="{%  url 'tool_detail' name.id %}">{{ name.name }}</a></p>
+<br>
+    <br>
+{% endfor %}
+<br>
+    <p><a href="{%  url 'index'  %}">Back to home screen</a></p>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div align="center">
+<h1>Fill out following form for : {{ tool.name }}</h1>
+<h3>Tool name: {{ tool.name }} </h3>
+<h3>Tool usage: {{ tool.usage }} </h3>
+<br>
+<form action="{% url 'run_tool_detail' tool.id %}" method="post" enctype="multipart/form-data">
+    {%  for name,form in forms %}
+        <h3>{{ name }}</h3>
+            {{ form }}
+            <br>
+            <br>
+{% endfor %}
+<input type="submit" value="Submit" />
+</form>
+
+<br>
+<br>
+    <a href="{%  url 'index'  %}">Back to home screen</a>
+
+    </div>
+</body>
+</html>

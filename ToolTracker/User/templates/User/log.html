@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div align="center">
+<h1>Logs of recent runs:</h1>
+    {%  for log in logs %}
+
+    <a href="{%  url 'log_detail' log.id %}">{{ log.user}} _{{ log.created_at }}</a>
+<br>
+    <br>
+{% endfor %}
+<br>
+    <a href="{%  url 'index'  %}">Back to home screen</a>
+
+    </div>
+</body>
+</html>

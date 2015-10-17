@@ -12,6 +12,8 @@ class Tool(models.Model):
     usage = models.TextField()
     file = models.FileField("Upload the file of the tool")
 
+    def __str__(self):
+        return str(self.name)
 
 
 
@@ -34,4 +36,13 @@ class Fields(models.Model):
     type = models.CharField("Type of argument",choices=field_type,max_length=500)
     env = models.CharField("Env variables",help_text="Specify env var as name=$value",max_length=100000)
     tool = models.ForeignKey(Tool)
+
+    class Meta:
+        verbose_name = 'Field'
+        verbose_name_plural = 'Fields'
+
+class logs(models.Model):
+    user = models.ForeignKey(User)
+    created_at = models.DateTimeField(auto_now=now())
+    log_data = models.TextField()
 
